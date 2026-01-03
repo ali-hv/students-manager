@@ -13,3 +13,19 @@ def view_students(students):
         print(f"Name: {student['name']}")
         print(f"Age: {student['age']}")
         print(f"Class name: {student['class_name']}")
+
+
+def update_student(students, student_name, update_field_name, new_value):
+    for student in students:
+        if student["name"] == student_name:
+            student[update_field_name] = new_value
+            return True
+    return False
+
+
+def delete_student(students, student_name):
+    for student in students:
+        if student["name"] == student_name:
+            students.remove(student)
+            return True
+    return False
